@@ -122,9 +122,84 @@
   
   ** Views와 Components의 연결과 똑같이 Components와 Components 끼리도 서로 호출하고 연결이 가능합니다. **
   
-## 4. Vuex store 사용법
+## 4. Vuex store 사용법 및 모듈화
 > 화면 구성을 알아보았으니 js (데이터 통신)을 알아보기전 라이브러리 동작 원리를 짚고 넘어가겠습니다.
 
 ### 4-1. Vuex란
-  Vue.js의 상태관리 라이브러리로 애플리케이션의 모든 컴포넌트에 대한 중앙 집중식 저장소 역할을 하며 의도적인 방법으로 상태를 변경 및 관리할 수 있다.
-## 5. Vue 메신저 frame js (데이터 통신) 구성 모듈화 및 동작 원리
+> Vue.js의 상태관리 라이브러리로 애플리케이션의 모든 컴포넌트에 대한 중앙 집중식 저장소 역할을 하며   의도적인 방법으로 상태를 변경 및 관리할 수 있습니다.
+
+### 4-2. Vuex store 구조
+  Vuex는 state, mutations, action, getters 4가지 형태로 관리가 되며, 관리 포인트는 store 라 불립니다.
+  ![image](https://user-images.githubusercontent.com/69878816/144184192-f1546b8e-d5f3-42ff-b334-d6b0323a9248.png)
+
+### 4-3. store의 js파일 구조
+```javascript
+// src/store/modules/setUser.js
+  
+  const setUserName = {
+    namespaced: true,  // 모듈이 독립적이거나 재사용되길 원할경우 true로 설정
+
+    state: { // 변수 선언
+      userName: 'userName'
+    },
+
+    getters: {  //state의 userName을 return
+      getUserName: state => state.userName
+    },
+
+    mutations: {  //state의 userName을 전달받은 payload값으로 변경 (동기)
+      setUserName: (state, payload) => {
+        state.userName = payload
+      }
+    },
+
+    actions: {  //vue에서 dispath로 data를 받아옴 (비동기)
+      acUserName: ({ commit }, payload) => {
+
+        ...
+
+        commit('setUserName', payload)  // 받아온 데이터를 가공하여 mutations의 setUserName으로 전달
+      }
+    }
+  }
+
+  export default setUserName
+  
+```
+  위 코드 처럼 modules로 js 파일을 분리하여 작성합니다. 그리고 export로 내보냅니다.   
+```javascript
+  // src/store/index.js
+  
+  import setUserName from '@/store/modules/setUserName.js
+  
+  const store = createStore({
+  
+    ...
+    
+    modules : {
+      setUserName : setUserName
+    }
+  })    
+  
+  ...
+```
+  그리고 index.js에서 받아와 modules로 설정 합니다.
+  main.js의 설정은 기본적으로 되어있으므로 생략하겠습니다.
+  
+### 4-4. store 데이터 vue에서 사용하기
+  ```vue
+    <span> {{$store.state.setUserName.userName}} </span>
+    
+    <script>
+      ...
+      
+      methods: {
+        userName() {
+          let Name = this.$store.state.setUserName.userName;
+        }
+      }
+    
+  ```
+  위와 같은식으로 $store로 state, getters, commit, dispatch를 통해 데이터 및 함수 접근이 가능합니다.
+## 4-5 모듈화 예제 2번 js 데이터 통신
+  
