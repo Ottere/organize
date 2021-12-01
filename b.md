@@ -12,7 +12,6 @@
 2. Vue-router 사용법
 3. Vue 메신저 frame 화면 구성 모듈화 및 동작 원리
 4. Vuex store 사용법
-5. Vue 메신저 frame js (데이터 통신) 구성 모듈화 및 동작 원리
 
 ## 1. Vue 설치 및 라이브러리 설치
 > Vue3 frontend 서버를 설치 및 설정합니다. <br>
