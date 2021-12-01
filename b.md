@@ -74,15 +74,42 @@
   ```vue
       // src/App.vue
       
+      <router-view/>
       <div>
         <router-link to="/"><i class="fa fa-home"></i><span>Home</span></router-link>
         <router-link to="/chat"><i class="fas fa-comments"></i><span>Chat</span></router-link>
       </div>
   ```
-  router-link to를 통해 URI를 지정하여 해당 component를 호출하는 방식입니다. (화면 새로고침 없음)
+  router-link to를 통해 URI를 지정하여 해당 component를 호출하는 방식입니다. (화면 새로고침 없음)   
+  현재 URI의 component를 보여주는 router-view를 통해 화면에 프레임을 나타냅니다.
   
 ## 3. Vue 메신저 frame 실행 화면 및 구성
 > 각 영역의 모듈화 및 데이터 통신 방법
+  0. 디렉토리 구성   
+    ![image](https://user-images.githubusercontent.com/69878816/144178001-f1f5c903-b9bd-4b7b-b203-c6fe73022be5.png)
 
   1. Home 화면   
-    ![image](https://user-images.githubusercontent.com/69878816/144177332-c5dc8132-0897-4fd5-8bff-a8e36e1aa4b7.png)
+    ![image](https://user-images.githubusercontent.com/69878816/144177332-c5dc8132-0897-4fd5-8bff-a8e36e1aa4b7.png)   
+    빨간색 테두리 내부 영역은 App.vue에서 위 router 사용하기처럼 링크를 걸어둔 영역입니다.   
+    위에 부분은 src/views/mobile/Home.vue 파일을 불러온 영역입니다.   
+  ```vue
+      // src/views/mobile/Home.vue
+      
+      ...
+      
+      <div>
+        <userList/>
+      </div>
+      
+      <script>
+        import userList from '@/components/home/userList.vue'
+        
+        export default {
+          name : 'Home',
+          
+          components : {
+            userList
+          }
+        }
+      </script>
+  ```
