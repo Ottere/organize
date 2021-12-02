@@ -225,3 +225,12 @@
   그리고 this.$store.commit을 통해 데이터를 전달하고 채팅방의 유저 이름을 변경합니다.
   
   
+  ## 참조
+  1. [vue-cli youtube](https://www.youtube.com/watch?v=G6rhxMuqnhU&list=PLZzSdj89sCN0sLqrTKf2m7lXe_93C19UG)
+  2. [vue-router youtube](https://www.youtube.com/watch?v=aeczJLcr8xc&list=PLZzSdj89sCN0IRcwT4lJWg_qgfBFmcF6A)
+  3. [Vuex 라이브러리 youtube](https://www.youtube.com/watch?v=gf_KAs7otf4&list=PLZzSdj89sCN292abcbI3utND8pA1T1OyB)
+    
+  ## 수정이력
+    1. 2021-12-02/김효성/초기 설정, 모듈화 및 사용 예제
+  
+  
