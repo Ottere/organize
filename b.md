@@ -202,4 +202,26 @@
   ```
   위와 같은식으로 $store로 state, getters, commit, dispatch를 통해 데이터 및 함수 접근이 가능합니다.
 ## 4-5 모듈화 예제 2번 js 데이터 통신
+  ```vue
+    // src/components/chat/chatList.vue
+    
+    ...
+    
+    <script>
+    
+      ...
+
+      methods : {
+        setChatName(event) {
+          const target = event.currentTarget;  <-- 내가 클릭한 DOM 요소
+          const ChatRoomName = $(target)  <-- 채팅방으로 전달할 유저의 이름
+            .find('.relative-name').text();
+          this
+            .$store.commit('setUserName/setUserName',ChatRoomName);
+      }
+    </script>
+  ```
+  위 코드를 이용해 vue의 @click을 통해 setChatName 호출합니다.   
+  그리고 this.$store.commit을 통해 데이터를 전달하고 채팅방의 유저 이름을 변경합니다.
+  
   
