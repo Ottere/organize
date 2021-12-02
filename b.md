@@ -1,7 +1,7 @@
-# Vue 설치 및 Vue 메신저 frame 모듈화
+# Vue 설치, Vue 메신저 frame 모듈화 및 동작원리
 
 ## 문서 정보
-> Vue3를 설치하고 Vue 메신저 frame 모듈화
+> Vue3를 설치하고 Vue 메신저 frame 모듈화 방식과 동작원리
 
 ## 작업 환경
 > Visual Studio Code, Node.js version-16.13.0, Vue Cli version-4.5.15 <br>
