@@ -92,7 +92,8 @@
   1. 실행 화면   
     ![image](https://user-images.githubusercontent.com/69878816/144180958-f20e1db5-c4ff-4b0f-abb7-c4f0a29d7d55.png)   
     빨간색 테두리 내부 영역은 App.vue에서 위 router 사용하기처럼 링크를 걸어둔 영역입니다.   
-    위에 부분은 src/views/mobile/Home.vue 파일을 불러온 영역입니다.   
+    위에 부분은 src/views/mobile/Home.vue 파일을 불러온 영역입니다.  
+    해당 메신저 frame의 경우 하단 메뉴를 기준으로 영역을 나눴습니다.
     
   2. 모듈화 예제 1번 Views와 components 간의 연결
   ```vue
@@ -223,6 +224,7 @@
   ```
   위 코드를 이용해 vue의 @click을 통해 setChatName 호출합니다.   
   그리고 this.$store.commit을 통해 데이터를 전달하고 채팅방의 유저 이름을 변경합니다.
+  이런 방식으로 js를 사용한 component간 데이터 전달 및 통신을 store를 통해 모듈화가 가능합니다.
   
   
   ## 참조
