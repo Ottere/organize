@@ -8,9 +8,9 @@
 > 주요 라이브러리 : Vue-router, Vuex, jquery
 
 ## 목차
-1. [Vue-router 사용법](#2-vue-router-사용법)
-2. [Vue 메신저 frame 화면 구성 모듈화 및 동작 원리](#3-Vue-메신저-frame-화면-구성-및-동작-원리)
-3. [Vuex store 사용법](#4-vuex-store-사용법-및-모듈화)
+1. [Vue-router 사용법](#1-vue-router-사용법)
+2. [Vue 메신저 frame 화면 구성 모듈화 및 동작 원리](#2-Vue-메신저-frame-화면-구성-및-동작-원리)
+3. [Vuex store 사용법](#3-vuex-store-사용법-및-모듈화)
 
 ## 1. Vue-router 사용법
 > 메신저 frame을 설명하기에 앞서 원활한 이해를 위해 라이브러리 동작 원리를 짚고 넘어가겠습니다.
