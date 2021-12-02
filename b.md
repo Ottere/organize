@@ -50,16 +50,16 @@
   router 경로 설정 파일의 경로는 src/router/index.js 입니다.   
   ```javascript
       // src/router/index.js
-      
+
       const routes = [
           ...
-      
+
           {
             path: '/chat',
             name: 'chatList',
             component: () => import('@/views/mobile/chat.vue')
           },
-      
+
           ...
       ]
   ```
@@ -88,6 +88,7 @@
     ![image](https://user-images.githubusercontent.com/69878816/144178001-f1f5c903-b9bd-4b7b-b203-c6fe73022be5.png)   
     ** views 폴더에는 화면에 직접적으로 뿌릴 vue 파일 **   
     ** components 폴더에는 views의 vue 파일 내부 부분(조각)들 **   
+    ** 각 메뉴별로 영역을 나눠 모듈화 **
   1. 실행 화면   
     ![image](https://user-images.githubusercontent.com/69878816/144180958-f20e1db5-c4ff-4b0f-abb7-c4f0a29d7d55.png)   
     빨간색 테두리 내부 영역은 App.vue에서 위 router 사용하기처럼 링크를 걸어둔 영역입니다.   
