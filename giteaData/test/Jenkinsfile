@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+  
+  stages {
+    stage('docker build and push') {
+      steps {
+        sh ''' 
+
+        docker version
+        '''
+      }
+    }
+    stage('deploy kubernetes') {
+      steps {
+        sh '''
+ 
+        '''
+      }
+    }
+  }
+}
